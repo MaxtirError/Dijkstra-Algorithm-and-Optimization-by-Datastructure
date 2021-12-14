@@ -67,6 +67,16 @@ void MapLike() {
     }
     s = 1; t = n;
 }
+void GENERAL() {
+    int n = 2e4, m = 1e5;
+    int W = 1e3;
+    for(int i = 1;i <= m; i++) {
+        int u = Rand(1, n), v = Rand(1, n);
+        for(;u == v; v = Rand(1, n)) ;
+        Print(u, v, Rand() % W);
+    }
+    s = 1; t = n;
+}
 int main() {
     srand(time(0));
     puts("INPUTDATANAME:");
@@ -82,9 +92,9 @@ int main() {
     {
         case 0:Tree();
             break;
-        case 1:Smalln();
-        case 2:MapLike();
-        default:
+        case 1:Smalln();break;
+        case 2:MapLike();break;
+        default:GENERAL();
             break;
     }
     
